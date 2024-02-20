@@ -19,10 +19,11 @@ script = ExtResource( 3 )
 [node name="StonePlatform2" parent="PlatformBlue" instance=ExtResource( 1 )]
 position = Vector2( 70, 0 )
 
+[node name="StonePlatform3" parent="PlatformBlue" instance=ExtResource( 1 )]
+position = Vector2( 142, 0 )
+
 [node name="BlueShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 70, 200 )
-rotation = 0.785398
-mass = 10.0
+position = Vector2( 72.7009, 421.901 )
 
 [node name="ObjectiveArea" type="Area2D" parent="."]
 script = ExtResource( 4 )
