@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/StonePlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/BlueShip.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/PlatformBlue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ObjectiveArea.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ObjectiveMessage.gd" type="Script" id=5]
+[ext_resource path="res://scenes/StaticPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/finish_line.png" type="Texture" id=7]
+[ext_resource path="res://assets/space.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 69.375, 39.5 )
+extents = Vector2( 34.8438, 70 )
 
 [node name="SecondLevel" type="Node"]
 
@@ -16,16 +19,14 @@ script = ExtResource( 5 )
 
 [node name="EndMessage" type="Label" parent="CanvasLayer"]
 visible = false
-margin_left = 1.0
-margin_top = 573.0
-margin_right = 286.0
-margin_bottom = 587.0
+margin_right = 285.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 2, 2 )
-rect_scale = Vector2( 2, 2 )
+rect_scale = Vector2( 1.5, 1.5 )
 text = "Game Complete!"
 
 [node name="PlatformBlue" type="Node2D" parent="."]
-position = Vector2( 35, 565 )
+position = Vector2( 104, 568 )
 script = ExtResource( 3 )
 
 [node name="StonePlatform" parent="PlatformBlue" instance=ExtResource( 1 )]
@@ -33,18 +34,198 @@ script = ExtResource( 3 )
 [node name="StonePlatform2" parent="PlatformBlue" instance=ExtResource( 1 )]
 position = Vector2( 70, 0 )
 
-[node name="StonePlatform3" parent="PlatformBlue" instance=ExtResource( 1 )]
-position = Vector2( 140, 0 )
-
 [node name="BlueShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 72.7009, 421.901 )
+position = Vector2( 128, 488 )
+mass = 10.0
 
 [node name="ObjectiveArea" type="Area2D" parent="."]
+light_mask = 2
 script = ExtResource( 4 )
 
+[node name="Sprite" type="Sprite" parent="ObjectiveArea"]
+light_mask = 16
+position = Vector2( 537, 244 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 7 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
-position = Vector2( 70.625, 40 )
+light_mask = 16
+position = Vector2( 537, 244 )
 shape = SubResource( 1 )
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="StaticPlatform" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 568 )
+
+[node name="StaticPlatform16" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 568 )
+
+[node name="StaticPlatform4" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 568 )
+
+[node name="StaticPlatform5" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 320, 568 )
+
+[node name="StaticPlatform6" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 392, 568 )
+
+[node name="StaticPlatform13" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 896, 568 )
+
+[node name="StaticPlatform14" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 968, 568 )
+
+[node name="StaticPlatform15" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 568 )
+
+[node name="StaticPlatform48" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 536, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform49" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 608, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform50" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 680, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform51" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 752, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform52" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 824, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform53" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 896, 352 )
+rotation = 0.00371492
+
+[node name="StaticPlatform17" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 496 )
+
+[node name="StaticPlatform18" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 424 )
+
+[node name="StaticPlatform19" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 352 )
+
+[node name="StaticPlatform20" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 280 )
+
+[node name="StaticPlatform21" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 208 )
+
+[node name="StaticPlatform30" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 496 )
+
+[node name="StaticPlatform31" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 424 )
+
+[node name="StaticPlatform32" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 352 )
+
+[node name="StaticPlatform33" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 280 )
+
+[node name="StaticPlatform34" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 208 )
+
+[node name="StaticPlatform36" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 464, 352 )
+
+[node name="StaticPlatform37" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 464, 280 )
+
+[node name="StaticPlatform38" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 464, 208 )
+
+[node name="StaticPlatform61" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 896, 280 )
+
+[node name="StaticPlatform63" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 752, 136 )
+
+[node name="StaticPlatform62" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 609, 279 )
+
+[node name="StaticPlatform39" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 464, 136 )
+
+[node name="StaticPlatform22" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 136 )
+
+[node name="StaticPlatform54" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 496 )
+
+[node name="StaticPlatform55" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 424 )
+
+[node name="StaticPlatform56" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 352 )
+
+[node name="StaticPlatform57" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 280 )
+
+[node name="StaticPlatform58" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 208 )
+
+[node name="StaticPlatform59" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 136 )
+
+[node name="StaticPlatform23" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 32, 64 )
+
+[node name="StaticPlatform24" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 104, 64 )
+
+[node name="StaticPlatform25" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 176, 64 )
+
+[node name="StaticPlatform26" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 248, 64 )
+
+[node name="StaticPlatform27" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 320, 64 )
+
+[node name="StaticPlatform28" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 392, 64 )
+
+[node name="StaticPlatform29" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 464, 64 )
+
+[node name="StaticPlatform40" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 536, 64 )
+
+[node name="StaticPlatform41" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 608, 64 )
+
+[node name="StaticPlatform42" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 680, 64 )
+
+[node name="StaticPlatform43" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 752, 64 )
+
+[node name="StaticPlatform44" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 824, 64 )
+
+[node name="StaticPlatform45" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 896, 64 )
+
+[node name="StaticPlatform46" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 968, 64 )
+
+[node name="StaticPlatform47" parent="Floor" instance=ExtResource( 6 )]
+position = Vector2( 1040, 64 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300.25 )
+scale = Vector2( 0.512, 0.424275 )
+z_index = -10
+texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="ObjectiveArea" to="CanvasLayer" method="_on_ObjectiveArea_body_entered_show_message"]
 [connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
